@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  .image{
+  position:relative;
+  top:30px;
+  }
+  .well{
+  margin-bottom: 20px;
+    background-color: #9e9e9e;
+    border: 1px solid #e3e3e3;
+  box-shadow: inset 0 1px 1px #9e9e9e;
+  }
+
+  </style>
+</head>
+
+<body data-ng-app="myApp">
+<div data-ng-controller="myCtrl">
+<div class="container-fluid">
+        <div class="row">
+            <div style="background-color: #9e9e9e;height:65px;width:auto;padding:20px">
+              <label style="color:white;font-size:20px;">WARS(Warehouse And Reporting System)</label>
+            </div>
+        </div>
+    </div>
+  <br><br><br>
+  <div class="text-center" ><h1>SIGNIN</h1></div><br>
+<div class = "container"> 
+ <div class = "well well-lg" style = "min-height:365px;">
+<div class="container col-sm-12 col-lg-12 col-xs-12 col-md-12">
+  <div class="col-md-6">
+  <div class="col-sm-6 col-lg-4 col-xs-6 col-md-6">
+       <img class="image img-rounded" src="../IMAGES/logo.jpg" />
+ </div>
+  </div>
+ <div class="col-md-6">
+    <label class="col-sm-2 col-lg-3 col-xs-3 col-md-3" style="position:relative;top:100px; color:white;">UserName:</label>
+  <span style="position:relative;top:100px;"><input type="text" data-ng-model="login.Email"></span><br>
+      <br><br>
+    <label  class="col-sm-2 col-lg-3 col-xs-3 col-md-3" style="position:relative;top:100px; color:white;">Password:</label> 
+  <span style="position:relative;top:100px;"><input type="text" data-ng-model="login.Password"></span><br>
+      <br><br>
+     <!--  <b style="position:relative;top:70px;left:20px;">{{invalid}}</b> -->
+      <button type="button" class="btn btn-default" value="login" data-ng-click="check(login);" style="position:relative;top:100px; left: 126px;">SIGNIN</button>
+ <b style="position:relative;top:70px;left:20px;">{{invalid}}</b>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+ <script>
+           var app = angular.module('myApp', []);
+          app.controller('myCtrl',['$scope', '$http', function( $scope, $http ) {
+     console.log("Inside myCtrl::"); 
+     var headersValue = {
+            "Content-Type": "application/json",
+            "Authorization" : "Basic " + btoa('Administrator:manage')
+            }
+     var body = {"Email":"tester304@gmail.com","password":"tester304"};
+
+          $scope.check = function( login ){
+           $http({
+             headers: headersValue,
+             method : "POST",
+             data : login,
+             url :"http://localhost:3005/login"
+          }).then(function mySuccess(response) {
+            console.log(response);
+              if(response.data.userDetail.status == "200"){
+                   window.location.href="../HTML/RegistrationForm.html"; 
+              }
+              else {
+                  $scope.invalid ="Enter valid Emailid and password";
+              }
+              
+              }),function myError(response) {
+               $scope.SIGNIN = response.statusText;
+              };
+    };
+  }]);  
+</script>
+</body>
+</html>

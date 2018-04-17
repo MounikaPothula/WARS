@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <title>WARS</title>
+    <link rel="shortcut icon" href="../public/img/logo.jpg"> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    
+    <style>
+        .panel-info {
+            border-color: #e67b1b!important;
+            
+          
+        }
+        .col-md-offset-3 {
+    margin-left: 14%;
+}
+.col-md-6 {
+    width: 73%;
+}
+        
+        .panel-info>.panel-heading {
+            color: #080808!important;
+            background-color: white;
+            border-color: white;
+           height: 65px;
+           width: auto;
+           
+    padding: 20px;
+            border-width:50px
+        }
+        
+        .btn-primary {
+            color: #fff!important;
+            background-color: #e67b1b!important;
+            border-color: #e67b1b!important;
+        }
+       
+a {
+    color: #337ab7;
+    text-decoration: none;
+    float: right;
+}
+.btn-primary {
+    color: #fff!important;
+    background-color: #e67b1b!important;
+    border-color: #e67b1b!important;
+    position: relative;
+    left: 77px;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.428571;
+    color: #333;
+    background-color: #fff;
+}
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: 27px;
+}
+    </style>
+
+
+</head>
+
+<body data-ng-app="myApp">
+ <div data-ng-controller="myCtrl">
+<div class="container-fluid">
+        <div class="row">
+           <div style="background-color:orange;height:65px;width:auto;padding:20px">
+            <label style="color:white;font-size:20px;">WARS(Warehouse And Reporting System)</label>
+                
+           
+                 
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container-fluid">
+                
+   <div class="row">
+   <div class="col-md-2">
+  
+   <p class="breadcrumb bread-primary"></p>
+     <div class="Mode">
+      <div data-ng-bind="filterObjects.mode" class="ng-binding">Mode</div>
+     </div>
+     <div>
+      <div class="btn-group-vertical border_mv">
+    <button type="button" class="btn Mode-Normal ng-binding ng-scope Mode-Select" data-ng-class="{'Mode-Select':mode == modeValue.name}" data-ng-repeat="modeValue in filterObjects.modeSection |orderBy : 'order'" data-ng-click="selectedMode(modeValue.name)" data-ui-sref="main.tileview" data-ui-sref-opts="{location:false,reload: false}" href="#/main/tileview">Tile</button>
+    <button type="button" class="btn Mode-Normal ng-binding ng-scope" data-ng-class="{'Mode-Select':mode == modeValue.name}" data-ng-repeat="modeValue in filterObjects.modeSection |orderBy : 'order'" data-ng-click="selectedMode(modeValue.name)" data-ui-sref="main.listview" data-ui-sref-opts="{location:false,reload: false}" href="#/listview">List</button>
+      </div>
+     </div>
+    </div>
+  </div>
+  <div class = "row">
+  <div class = "col-md-4">
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+    <span class="caret"></span></button>
+    <ol class="dropdown-menu">
+      <li>Existing Invoice</li>
+      <li>NewInvoice</li>
+    </ol>
+  </div>
+  </div>    
+  </div> 
+  </div>
+                    
+               
+
+ 
+
+
+                        
+               
+            </div>
+        
+ <!-- <script>
+
+
+var app = angular.module('myApp', []);
+app.controller('myCtrl',['$scope','$window', function($scope,$window) {
+ $scope.submit=function(){
+  $window.location="../views/PutOut.html";
+ }
+ 
+}]);
+
+
+
+
+</script> -->
+</body>
+
+</html>

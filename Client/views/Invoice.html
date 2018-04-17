@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <title>WARS</title>
+    <link rel="shortcut icon" href="../public/img/logo.png"> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>   
+	<script type="text/javascript" src="bootstrap-datetimepicker.de.js" charset="UTF-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    <style>
+        .panel-info {
+            border-color: #e67b1b!important;
+        }
+        .col-md-offset-3 {
+    margin-left: 14%;
+}
+.col-md-6 {
+    width: 73%;
+}
+        
+        .panel-info>.panel-heading {
+            color: #f2dede!important;
+            background-color: orange;
+            border-color: orange;
+        }
+        
+        .btn-primary {
+            color: #fff!important;
+            background-color: #e67b1b!important;
+            border-color: #e67b1b!important;
+        }
+       
+a {
+    color: orange;
+    text-decoration: none;
+    float: right;
+}
+.btn-primary {
+    color: #fff!important;
+    background-color: #e67b1b!important;
+    border-color: #e67b1b!important;
+    position: relative;
+    left: 50px;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+      line-height: 1.428571;
+    color: #333;
+    background-color: #fff;
+}
+
+    </style>
+
+
+</head>
+
+<body data-ng-app="myApp">
+	<div data-ng-controller="myCtrl">
+<div class="container-fluid">
+        <div class="row">
+            <div style="background-color:orange;height:65px;width:auto;padding:20px">
+            <label style="color:white;font-size:20px;">WARS (Warehouse And Reporting System)</label>
+                
+                 
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="loginbox" style="margin-top:45px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                     <div class="panel-title" ><div class="text-center"><h4 style="color:white;">INVOICE</h4></div></div>
+
+                </div>
+
+                <div style="padding-top:0px" class="panel-body">
+
+                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+  <div class="row">
+    <form class="form-horizontal" >
+     <div >
+    <label style="top: 28px;"  class=" control-label col-sm-11">Add New</label>
+        <a href="http://localhost:8081/wareHouse/HTML/Invoice.html"> 
+          <span style="font-size:32px; position: relative; right: 100px;" class="glyphicon glyphicon-plus-sign  col-sm-6"></span>
+          <div class="col-sm-2 control-span"></div>
+        </a>
+      </div> 
+      <br><br><br>
+  <div class="form-group row">
+    <label class="control-label col-sm-4" >InvoiceId:</label>
+    <div class="col-sm-5 control-label">
+      <input type="text" class="form-control" >
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="control-label col-sm-4" >TransactionId:</label>
+    <div class="col-sm-5 control-label">
+      <input type="text" class="form-control" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-4" >ItemId:</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" >
+    </div>
+  </div>
+  
+  <!-- <div class="form-group">
+  <label class="control-label col-sm-4" >Time/date:</label>
+  <div id="1" class="input-append date form_datetime control-label col-sm-4" data-date="2013-02-21T15:25:00Z">
+    <input size="20" type="text" class="form-control" value="" readonly>
+    <span class="add-on"><i class="icon-remove col-sm-5"></i></span>
+    <span class="add-on"><i class="icon-calendar col-sm-5"></i></span>
+</div></div> -->
+   <div class="form-group">
+  <label class="control-label col-sm-4" >Time/Date:</label>
+   <div class="col-sm-5">
+<input type="datetime-local" id="exampleInput" class="form-control" name="input" ng-model="example.value"
+      placeholder="yyyy-MM-ddTHH:mm:ss"  />
+       </div></div>
+       
+       
+  <div class="form-group">
+    <label class="control-label col-sm-4" >CustomerName:</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-4" >ProductName:</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" >
+      <div style="margin-top:25px" class="col-sm-4" class="form-group" >
+                        
+                        <p class="btn btn-primary" data-ng-click="submit">SUBMIT </p> 
+                           </div>
+    </div>
+  </div>
+  
+  
+</form>
+	</div>
+    <br>
+                   </div> 
+                 </div>
+               </div>
+             </div>
+           </div>
+          
+   <script>
+           var app = angular.module('myApp', []);
+          app.controller('myCtrl',['$scope', '$http', function( $scope, $http ) {
+        	  $scope.example = {
+        			  value: new Date()
+        		     };
+        	   }]);  
+   </script> 
+  </body>
+ </html>  
+                    
+                    
+                    
+                    
+                    
+                    

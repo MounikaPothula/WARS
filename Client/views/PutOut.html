@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <title>WARS</title>
+    <link rel="shortcut icon" href="../public/img/logo.jpg"> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    
+    <style>
+        .panel-info {
+            border-color: #e67b1b!important;
+        }
+        .col-md-offset-3 {
+    margin-left: 14%;
+}
+.col-md-6 {
+    width: 73%;
+}
+        
+        .panel-info>.panel-heading {
+            color: #f2dede!important;
+            background-color: orange;
+            border-color: orange;
+        }
+        
+        .btn-primary {
+            color: #fff!important;
+            background-color: #e67b1b!important;
+            border-color: #e67b1b!important;
+        }
+       
+a {
+    color: #337ab7;
+    text-decoration: none;
+    float: right;
+}
+.btn-primary {
+    color: black!important;
+    background-color: #ecefeb!important;
+    border-color: black!important;
+    /* position: relative;
+    left: 77px; */
+}
+.btn-default {
+    color: #333;
+    background-color: lightgrey;
+    border-color: #ccc;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.428571;
+    color: #333;
+    background-color: #fff;
+}
+ a {
+            color: #e5ba68;
+            text-decoration: none;
+            font-weight: 400;
+        }
+        
+        a:link {
+            color: #e5ba68;
+        }
+        
+        a:visited {
+            color: black;
+        }
+        
+        a:hover {
+            color: #ecce94;
+        }
+        
+        a:focus {
+            color: #f4e2bf;
+        }
+       .center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+}
+.mycontent-left {
+  border-right: 1px solid #333;
+}
+    </style>
+
+
+</head>
+
+<body data-ng-app="myApp">
+	<div data-ng-controller="myCtrl">
+<div class="container-fluid">
+        <div class="row">
+           <div style="background-color:orange;height:65px;width:auto;padding:20px">
+            <label style="color:white;font-size:20px;">WARS(Warehouse And Reporting System)</label>
+                
+               <!--   <a href="http://about.html">About</a> -->
+                 
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="loginbox" style="margin-top:100px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                     <div class="panel-title" ><div class="text-center"><h4 style="color:white;">SubTypes</h4></div></div>
+
+                </div>
+
+                <div style="padding-top:45px" class="panel-body">
+
+                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                    
+                 
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
+       
+ <div class="col-sm-6 mycontent-left">
+ <img class="img-responsive" style=" height:218px; width:428px;" src="../public/img/logo.jpg" />
+  
+  </div>
+  <div class="col-sm-6">
+   <div   class=" " >
+    <button type="button" class="btn btn-primary center-block "  data-ng-click="Put();">Put Away</button>        
+   </div>
+   <br>
+   <div   class=" " >
+  <button type="button" class="btn btn-primary disabled center-block "  data-ng-click="Take();">TakeAway</button><br></div>
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+
+
+var app = angular.module('myApp', []);
+app.controller('myCtrl',['$scope','$window', function($scope,$window) {
+	$scope.Put=function(){
+		$window.location="../views/Invoice.html";
+	}
+	
+}]);
+
+
+
+
+</script>
+</body>
+</html>

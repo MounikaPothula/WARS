@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <title>WARS</title>
+    <link rel="shortcut icon" href="../public/img/logo.jpg"> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    
+    <style>
+        .panel-info {
+            border-color: #e67b1b!important;
+        }
+        .col-md-offset-3 {
+    margin-left: 14%;
+}
+.col-md-6 {
+    width: 73%;
+}
+        
+        .panel-info>.panel-heading {
+            color: #f2dede!important;
+            background-color: orange;
+            border-color: orange;
+        }
+        
+        .btn-primary {
+            color: #fff!important;
+            background-color: #e67b1b!important;
+            border-color: #e67b1b!important;
+        }
+       
+a {
+    color: #337ab7;
+    text-decoration: none;
+    float: right;
+}
+.btn-primary {
+    color: #fff!important;
+    background-color: #e67b1b!important;
+    border-color: #e67b1b!important;
+    position: relative;
+    left: 77px;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.428571;
+    color: #333;
+    background-color: #fff;
+}
+    </style>
+
+
+</head>
+
+<body data-ng-app="myApp">
+	<div data-ng-controller="myCtrl">
+<div class="container-fluid">
+        <div class="row">
+           <div style="background-color:orange;height:65px;width:auto;padding:20px">
+            <label style="color:white;font-size:20px;">WARS(Warehouse And Reporting System)</label>
+                
+               <!--   <a href="http://about.html">About</a> -->
+                 
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="loginbox" style="margin-top:100px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                     <div class="panel-title" ><div class="text-center"><h4 style="color:white;">SIGNUP</h4></div></div>
+
+                </div>
+
+                <div style="padding-top:45px" class="panel-body">
+
+                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+ <div class="col-sm-12"> 
+ <div class="col-sm-6">
+ <img class="img-responsive" style=" height:218px; width:428px;" src="../public/img/logo.jpg" />
+  
+  </div>
+  <div class="col-sm-6">
+   <div   class="pull-right" >
+   <label  class="col-sm-4 ">FirstName:</label> <span><input type="text" > </span><br>
+    <br>
+    <label  class="col-sm-4 ">LastName:</label> <span><input type="text" > </span><br>
+    <br>
+    <label  class="col-sm-4 ">UserName:</label> <span><input type="text" > </span><br>
+    <br>
+    <!-- <label class="col-sm-4 control-label">UserId:</label> <span><input type="text"  > </span> <br>
+    <br> -->
+      <label class="col-sm-4 control-label">Password:</label> <span><input type="text" > </span><br>
+      
+     <div style="margin-top:25px" class="col-sm-4" class="form-group" >
+     
+      <button type="button" class="btn btn-primary"  data-ng-click="submit();">SUBMIT</button> 
+                        
+                       <!--  <p class="btn btn-primary"  data-ng-click="submit">SUBMIT </p> --> 
+                           </div>
+    </div> 
+    <br>
+   
+  </div>
+  
+  
+  
+  
+  </div>
+ 
+
+ 
+
+
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+ <script>
+
+
+var app = angular.module('myApp', []);
+app.controller('myCtrl',['$scope','$window', function($scope,$window) {
+	$scope.submit=function(){
+		$window.location="../views/PutOut.html";
+	}
+	
+}]);
+
+
+
+
+</script>
+</body>
+
+</html>
